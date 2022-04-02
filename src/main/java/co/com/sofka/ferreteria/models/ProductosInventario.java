@@ -56,4 +56,15 @@ public class ProductosInventario {
         if(productos.size()>0) return productos.stream().mapToInt(value -> value.getValor()).sum();
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "ProductosInventario{" +
+                "productos=" + productos + "\n" +
+                ", referenciaNombre='" + referenciaNombre + '\'' +
+                ", minimoRequerido=" + minimoRequerido +
+                ", maximoPermitido=" + maximoPermitido +
+                ", valorTotal=" + valorTotal + "\n" +
+                '}';
+    }
 }

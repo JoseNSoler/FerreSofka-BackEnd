@@ -9,6 +9,8 @@ import java.util.List;
 public class Inventario {
     @Id
     private String id;
+
+
     private List<ProductosInventario> productosInventario;
 
 
