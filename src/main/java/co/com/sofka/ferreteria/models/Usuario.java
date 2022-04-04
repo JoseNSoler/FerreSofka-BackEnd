@@ -1,23 +1,37 @@
 package co.com.sofka.ferreteria.models;
 
 
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Usuarios")
 public class Usuario {
     @Id
+    @ApiModelProperty(notes = "ID Usuario"
+            , example = "_USUARIO#123456", required = true)
     private String id;
 
+    @ApiModelProperty(notes = "Identificacion publica del usuario // Tarjeta profesional para proveedores o Numero Documento identidad para empleados y clientes"
+            , example = "_USUARIO#123456", required = true)
     private String identificacion;
+
     // Tipos de usuario: Empleado, Cliente, Proveedor
+    @ApiModelProperty(notes = "Tipo de usuario ** SOLO SE PERMITEN: ADMIN, EMPLEADO, CLIENTE, PROVEEDOR"
+            , example = "EMPLEADO", required = true)
     private String tipo;
 
+    @ApiModelProperty(notes = "Nombre del usuario"
+            , example = "John Doe", required = true)
     private String nombre;
 
     //Manejo casos numeros internacionales +57
+    @ApiModelProperty(notes = "Telefono de contacto"
+            , example = "+57 213 245672", required = true)
     private String numeroContacto;
 
+    @ApiModelProperty(notes = "Descripcion del usuario"
+            , example = "Empleado sucursal ubicada en la direccion Av.", required = true)
     private String descripcionUsuario;
 
 

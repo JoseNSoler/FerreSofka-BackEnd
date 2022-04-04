@@ -1,14 +1,33 @@
 package co.com.sofka.ferreteria.models;
 
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Objects;
 
 public class Producto {
+    @ApiModelProperty(notes = "ID producto Unitario"
+            , example = "_PRODUCTO#3121325", required = true)
     private String id;
+
+    @ApiModelProperty(notes = "Referencia del producto"
+            , example = "pintura polarizante especializada V2.0", required = true)
     private String referencia;
+
+    @ApiModelProperty(notes = "referencia Principal del producto **ENTIENDASE POR LA CATEGORIA O BASE PRINCIPAL DEL PRODUCTO"
+            , example = "pinturas", required = true)
     private String referenciaPrincipal;
+
+    @ApiModelProperty(notes = "Nombre del proveedor a quien se realizo este producto en especifico **PUEDE VARIAR EN BASE A LA DB"
+            , example = "Pintuco", required = true)
     private String proveedorNombre;
+
+    @ApiModelProperty(notes = "Referencia unica del producto - Numero representado en codigo de barras como identificador de la empresa proveedora"
+            , example = "#PintucoPared13254", required = true)
     private String referenciaID;
+
+    @ApiModelProperty(notes = "Valor unitario del producto"
+            , example = "1254678", required = true)
     private Integer valor;
 
 

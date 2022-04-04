@@ -5,6 +5,9 @@ import co.com.sofka.ferreteria.models.Inventario;
 import co.com.sofka.ferreteria.models.Producto;
 import co.com.sofka.ferreteria.models.ProductosInventario;
 import co.com.sofka.ferreteria.service.impl.InventarioServicioImpl;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +26,12 @@ public class InventarioControlador {
 
     // MapperInventario mapperInventario;
 
+
+    @ApiOperation(value = "Mostrar todos los inventarios segun ID", notes = "Retorna los inventarios segun ID presentes en la base de datos")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Respuesta satisfactoria"),
+            @ApiResponse(code = 404, message = "No se encontro el inventario en la DB")
+    })
     @GetMapping("/mostrarTodos")
     public Flux<Inventario> mostrarTodos(){
         return inventarioServicio.mostrarTodos();

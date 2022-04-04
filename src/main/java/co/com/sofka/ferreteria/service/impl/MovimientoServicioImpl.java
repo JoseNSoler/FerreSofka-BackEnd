@@ -11,6 +11,7 @@ import co.com.sofka.ferreteria.service.IMovimientoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import javax.management.AttributeNotFoundException;
@@ -29,7 +30,12 @@ public class MovimientoServicioImpl implements IMovimientoServicio {
 
 
     @Override
-    public Mono<MovimientoInventario> crearMovimiento(String idInventario, MovimientoInventario movimiento) {
+    public Flux<MovimientoInventario> mostrarMovimientosPorIDInventario(String idInventario){
+        return movimientosInventario.findAll();
+    }
+
+    @Override
+    public Mono<MovimientoInventario> crearMovimientoPorIDInventario(String idInventario, MovimientoInventario movimiento) {
 
         try {
             Objects.requireNonNull(movimiento.getId(), "ID no puede ser null");

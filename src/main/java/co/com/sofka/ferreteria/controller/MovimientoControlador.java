@@ -18,6 +18,6 @@ public class MovimientoControlador {
 
     @PostMapping("/crearMovimientoPorID/{idInventario}")
     private Mono<MovimientoInventario> crearMovimiento(@PathVariable("idInventario") String idInventario, @RequestBody MovimientoInventario movimiento){
-        return movimientoServicio.crearMovimiento(idInventario, movimiento);
+        return movimientoServicio.crearMovimientoPorIDInventario(idInventario, movimiento);
     }
 }
