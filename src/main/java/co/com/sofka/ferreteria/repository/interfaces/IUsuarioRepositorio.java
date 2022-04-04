@@ -6,5 +6,5 @@ import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import reactor.core.publisher.Mono;
 
 public interface IUsuarioRepositorio extends ReactiveMongoRepository<Usuario, String>, IRefDominioRepositorio{
-    Mono<Inventario> save(Mono<Inventario> inventario);
+
 }

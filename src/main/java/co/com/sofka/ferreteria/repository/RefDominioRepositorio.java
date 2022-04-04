@@ -15,4 +15,5 @@ public class RefDominioRepositorio implements IRefDominioRepositorio {
     public Mono<Inventario> save(Mono<Inventario> inventario){
         return mongoTemplate.save(inventario);
     }
+
 }

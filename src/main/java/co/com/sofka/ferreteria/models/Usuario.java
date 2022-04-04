@@ -18,17 +18,28 @@ public class Usuario {
     //Manejo casos numeros internacionales +57
     private String numeroContacto;
 
+    private String descripcionUsuario;
+
+
 
 
     public Usuario() {
     }
 
-    public Usuario(String id, String identificacion, String tipo, String nombre, String numeroContacto) {
+    public Usuario(String id, String identificacion, String tipo, String nombre, String numeroContacto, String descripcionUsuario) {
         this.id = id;
         this.identificacion = identificacion;
         this.tipo = tipo;
         this.nombre = nombre;
         this.numeroContacto = numeroContacto;
+        this.descripcionUsuario = descripcionUsuario;
+    }
+
+    public static Usuario of(Usuario usuario){
+        return new Usuario(
+                usuario.getId(), usuario.getIdentificacion(), usuario.getTipo(), usuario.getNombre(), usuario.getNumeroContacto(),
+                usuario.getDescripcionUsuario()
+        );
     }
 
 
@@ -53,6 +64,9 @@ public class Usuario {
         return numeroContacto;
     }
 
+    public String getDescripcionUsuario() {
+        return descripcionUsuario;
+    }
 
     // ------------------------------------ SETTERS ----------------------------------------
 
@@ -75,5 +89,9 @@ public class Usuario {
 
     public void setNumeroContacto(String numeroContacto) {
         this.numeroContacto = numeroContacto;
+    }
+
+    public void setDescripcionUsuario(String descripcionUsuario) {
+        this.descripcionUsuario = descripcionUsuario;
     }
 }
