@@ -86,7 +86,7 @@ public class Producto {
     }
 
     public static Producto of(Producto newProducto){
-        var productoOld = new Producto();
+        Producto productoOld = new Producto();
         productoOld.setId(newProducto.getId());
         productoOld.setReferencia(newProducto.getReferencia());
         productoOld.setValor(newProducto.getValor());
