@@ -11,7 +11,9 @@ import java.util.Date;
 import java.util.List;
 
 
+@Document(collection = "movimientosInventario")
 public class MovimientoInventario {
+    @Id
     @ApiModelProperty(notes = "ID personalizado para movimientos internos de la empresa **FACTURA#123234 -- ENTRADA#321547"
             , example = "FACTURA#123234", required = true)
     private String id;

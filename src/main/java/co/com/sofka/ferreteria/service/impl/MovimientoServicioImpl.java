@@ -30,7 +30,7 @@ public class MovimientoServicioImpl implements IMovimientoServicio {
 
 
     @Override
-    public Flux<MovimientoInventario> mostrarMovimientosPorIDInventario(String idInventario){
+    public Flux<MovimientoInventario> mostrarMovimientos(){
         return movimientosInventario.findAll();
     }
 

@@ -6,5 +6,5 @@ import reactor.core.publisher.Mono;
 
 public interface IMovimientoServicio {
     Mono<MovimientoInventario> crearMovimientoPorIDInventario(String idInventario, MovimientoInventario movimiento);
-    Flux<MovimientoInventario> mostrarMovimientosPorIDInventario(String idInventario);
+    Flux<MovimientoInventario> mostrarMovimientos();
 }
