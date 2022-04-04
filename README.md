@@ -1,7 +1,11 @@
 # FERRESOFKA creacion 
 
-metodos desde /inventario
 
+Deploy HEROKU: **en progreso
+Video en youtube: Link youtube
+
+metodos desde /inventario
+Docuimentacion swagger disponible en http://localhost:8080/swagger-ui.html
 
 La estructura del inventario, se basa en un objeto inventario principal, con una lista de `ProductosInventarios`, este objeto contiene una lista de los `Productos` con
 sus minimos y maximos permitidos (se configura para poder recibir solo cierta cantidad, al mismo tiempo de limitar las cantidades disponibles)
