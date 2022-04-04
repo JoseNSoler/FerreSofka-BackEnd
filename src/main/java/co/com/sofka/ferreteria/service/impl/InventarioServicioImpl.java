@@ -89,6 +89,7 @@ public class InventarioServicioImpl implements IinventarioServicio {
                                                                         productoInv.setProveedorNombre(nuevoProdct.getProveedorNombre());
                                                                         productoInv.setId(nuevoProdct.getId());
                                                                         productoInv.setValor(nuevoProdct.getValor());
+                                                                        productoInv.setReferenciaPrincipal(nuevoProdct.getReferenciaPrincipal());
                                                                     }
                                                                 });
                                                                 return productoInv;
@@ -239,6 +240,7 @@ public class InventarioServicioImpl implements IinventarioServicio {
         );
          */
     }
+
 
 
     //.anyMatch(producto -> producto.getReferenciaNombre().equals(referenciaNombre))

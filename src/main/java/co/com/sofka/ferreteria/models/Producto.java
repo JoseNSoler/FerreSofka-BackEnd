@@ -6,6 +6,7 @@ import java.util.Objects;
 public class Producto {
     private String id;
     private String referencia;
+    private String referenciaPrincipal;
     private String proveedorNombre;
     private String referenciaID;
     private Integer valor;
@@ -36,6 +37,10 @@ public class Producto {
         return referencia;
     }
 
+    public String getReferenciaPrincipal() {
+        return referenciaPrincipal;
+    }
+
     // ------------------------------------ SETTERS ----------------------------------------
     public void setId(String id) {
         this.id = id;
@@ -57,6 +62,9 @@ public class Producto {
         this.referencia = referencia;
     }
 
+    public void setReferenciaPrincipal(String referenciaPrincipal) {
+        this.referenciaPrincipal = referenciaPrincipal;
+    }
 
     public static Producto of(Producto newProducto){
         var productoOld = new Producto();
@@ -65,30 +73,29 @@ public class Producto {
         productoOld.setValor(newProducto.getValor());
         productoOld.setProveedorNombre(newProducto.getProveedorNombre());
         productoOld.setReferenciaID(newProducto.getReferenciaID());
+        productoOld.setReferenciaPrincipal(newProducto.getReferenciaPrincipal());
         return productoOld;
     }
-
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Producto)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Producto producto = (Producto) o;
-        return id.equals(producto.id) && referencia.equals(producto.referencia) && proveedorNombre.equals(producto.proveedorNombre) && referenciaID.equals(producto.referenciaID) && Objects.equals(valor, producto.valor);
+        return Objects.equals(id, producto.id) && Objects.equals(referencia, producto.referencia) && Objects.equals(referenciaPrincipal, producto.referenciaPrincipal) && Objects.equals(proveedorNombre, producto.proveedorNombre) && Objects.equals(referenciaID, producto.referenciaID) && Objects.equals(valor, producto.valor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, referencia, proveedorNombre, referenciaID, valor);
+        return Objects.hash(id, referencia, referenciaPrincipal, proveedorNombre, referenciaID, valor);
     }
-
-
 
     @Override
     public String toString() {
         return "\nProducto{" +
                 "id='" + id + '\'' +
                 ", referencia='" + referencia + '\'' +
+                ", referenciaPrincipal='" + referenciaPrincipal + '\'' +
                 ", proveedorNombre='" + proveedorNombre + '\'' +
                 ", referenciaID='" + referenciaID + '\'' +
                 ", valor=" + valor +

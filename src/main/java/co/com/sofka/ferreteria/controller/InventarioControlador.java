@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost"})
 @RequestMapping("/inventario")
 public class InventarioControlador {
     @Autowired
@@ -28,7 +29,8 @@ public class InventarioControlador {
     }
 
     @PostMapping("/agregarListaProductos/{id}")
-    private ResponseEntity agregarListaProductos(@PathVariable("id") String id, @RequestBody ProductosInventario productosInventario){
+    private ResponseEntity agregarListaProductos(
+            @PathVariable("id") String id, @RequestBody ProductosInventario productosInventario){
         return inventarioServicio.agregarListaProductos(id, productosInventario);
     }
 
