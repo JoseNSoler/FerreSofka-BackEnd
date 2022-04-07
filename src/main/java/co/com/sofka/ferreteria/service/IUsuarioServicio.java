@@ -6,7 +6,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface IUsuarioServicio {
-    ResponseEntity guardarUsuario(Usuario usuario);
+    Mono<Usuario> guardarUsuario(Usuario usuario);
 
     Flux<Usuario> mostrarUsuarios();
 

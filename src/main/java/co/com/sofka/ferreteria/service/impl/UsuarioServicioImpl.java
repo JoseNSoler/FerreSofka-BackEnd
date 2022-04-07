@@ -11,6 +11,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import javax.security.auth.login.AccountNotFoundException;
+import java.util.List;
 
 @Service
 public class UsuarioServicioImpl implements IUsuarioServicio {
@@ -18,8 +19,9 @@ public class UsuarioServicioImpl implements IUsuarioServicio {
     private IUsuarioRepositorio usuarioRepositorio;
 
     @Override
-    public ResponseEntity guardarUsuario(Usuario usuario) {
-        return new ResponseEntity(usuarioRepositorio.save(usuario), HttpStatus.ACCEPTED);
+    public Mono<Usuario> guardarUsuario(Usuario usuario) {
+        System.out.println(usuario);
+        return usuarioRepositorio.save(usuario);
     }
 
     @Override

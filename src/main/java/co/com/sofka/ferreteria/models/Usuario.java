@@ -108,4 +108,17 @@ public class Usuario {
     public void setDescripcionUsuario(String descripcionUsuario) {
         this.descripcionUsuario = descripcionUsuario;
     }
+
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id='" + id + '\'' +
+                ", identificacion='" + identificacion + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", numeroContacto='" + numeroContacto + '\'' +
+                ", descripcionUsuario='" + descripcionUsuario + '\'' +
+                '}';
+    }
 }

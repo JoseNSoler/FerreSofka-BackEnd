@@ -21,8 +21,8 @@ public class UsuarioControlador {
     }
 
     @PostMapping("/agregarUsuario")
-    public ResponseEntity agregarUsuario(@RequestBody Usuario usuario){
-        return usuarioServicio.guardarUsuario(usuario);
+    public Mono<Usuario> agregarUsuario(@RequestBody Usuario usuarioNuevo){
+        return usuarioServicio.guardarUsuario(usuarioNuevo);
     }
 
     @PutMapping("/modificarUsuarioPorID/{idUser}")

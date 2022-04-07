@@ -8,4 +8,5 @@ import reactor.core.publisher.Mono;
 public interface IRefDominioRepositorio {
     Mono<Inventario> save(Mono<Inventario> inventario);
 
+
 }
